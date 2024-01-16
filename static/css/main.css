@@ -1,0 +1,13 @@
+.navbar-brand {
+    font-size: 64px; /* You can adjust the font size as needed */
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar-nav .nav-item {
+    text-align: center;
+    margin: 0 auto; /* Center the items */
+}
+
