@@ -1,5 +1,5 @@
 .navbar-brand {
-    font-size: 64px; /* You can adjust the font size as needed */
+    font-size: 34px; /* You can adjust the font size as needed */
 }
 
 .navbar-nav {
@@ -11,3 +11,63 @@
     margin: 0 auto; /* Center the items */
 }
 
+.bg-custom {
+    background-color: #007D77;
+}
+ /*LOGIN FORM*/
+ .body-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007D77;
+}
+
+.login-container {
+    background-color: #007D77;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightgray;
+    margin: 0 auto 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007D77;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #005F58;
+}
