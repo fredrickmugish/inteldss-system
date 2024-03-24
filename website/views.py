@@ -54,3 +54,12 @@ def user_panel(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+def data_coll(request):
+    return render(request, 'data_coll.html')
+
+def dash(request):
+    return render(request, 'dashboard.html')
+
+def disruption(request):
+    return render(request, 'disruption.html')

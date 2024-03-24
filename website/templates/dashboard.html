@@ -27,11 +27,6 @@
         <div class="header-left">
           <span class="material-icons-outlined">search</span>
         </div>
-
-        <div class="main-title">
-            <p class="font-weight-bold" style="color: white;">DATA COLLECTION</p>
-          </div>
-        
         <div class="header-right">
             <span>Hello, {{request.user}}</span>
           <span class="material-icons-outlined"><a href="{% url 'logout' %}">account_circle</a></span>
@@ -49,17 +44,17 @@
         </div>
 
         <ul class="sidebar-list">
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/dash">dashboard</a> Dashboard
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined" href="/dash">dashboard</span> Dashboard
           </li>
 
-          <li class="sidebar-list-item font-weight-bold">
+          <li class="sidebar-list-item">
             <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
             </a>
           </li>
 
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/disruption">fact_check</a> Disruption
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">fact_check</span> Inventory
           </li>
 
           <li class="sidebar-list-item"> 
@@ -84,6 +79,9 @@
 
      
       <main class="main-container">
+  <div class="main-title">
+    <p class="font-weight-bold">DASHBOARD</p>
+  </div>
          <!-- Main 
         <div class="main-title">
           <p class="font-weight-bold">MY <span style="color: dodgerblue;">DASHBOARD</span></p>
