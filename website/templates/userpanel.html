@@ -14,26 +14,29 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/panel.css' %}" />
-  
+    <link rel="stylesheet" href="{% static 'js/panel.js' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
   </head>
   <body>
     <div class="grid-container">
 
       <!-- Header -->
-      <header class="header">
-        <div class="menu-icon" onclick="openSidebar()">
-          <span class="material-icons-outlined">menu</span>
-        </div>
-        <div class="header-left">
-          <span class="material-icons-outlined">search</span>
+      <header class="header">    
+        <div class="header-left" >
+          <span class="material-icons-outlined" style="color: white;">menu</span>
         </div>
 
         <div class="main-title">
-            <p class="font-weight-bold" style="color: white;">DATA COLLECTION</p>
+            <p class="font-weight-bold" style="color: white;">intelligent decision support system</p>
           </div>
         
-        <div class="header-right">
-            <span>Hello, {{request.user}}</span>
+        <div class="header-right" >
+            <span  >Hello, {{request.user}}</span>
           <span class="material-icons-outlined"><a href="{% url 'logout' %}">account_circle</a></span>
         </div>
       </header>
@@ -53,26 +56,21 @@
             <a class="material-icons-outlined" href="/dash">dashboard</a> Dashboard
           </li>
 
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
-            </a>
-          </li>
 
           <li class="sidebar-list-item font-weight-bold">
             <a class="material-icons-outlined" href="/disruption">fact_check</a> Disruption
           </li>
 
-          <li class="sidebar-list-item"> 
-            <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+
+          <li class="sidebar-list-item font-weight-bold">
+            <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
+            </a>
+          </li>
+     
+          <li class="sidebar-list-item font-weight-bold">
+            <a class="material-icons-outlined" href="/data_analysis">poll</a> Data Analysis
           </li>
 
-          <li class="sidebar-list-item">
-            <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-          </li>
-
-          <li class="sidebar-list-item">
-            <span class="material-icons-outlined">poll</span> Reports
-          </li>
 
           <li class="sidebar-list-item">
             <span class="material-icons-outlined">settings</span> Settings

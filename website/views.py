@@ -63,3 +63,6 @@ def dash(request):
 
 def disruption(request):
     return render(request, 'disruption.html')
+
+def data_analysis(request):
+    return render(request, 'data_analysis.html')
