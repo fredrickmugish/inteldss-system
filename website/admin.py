@@ -3,3 +3,5 @@ from .models import*
 
 # Register your models here.
 admin.site.register(Organization)
+admin.site.register(Disruptor)
+admin.site.register(Team)

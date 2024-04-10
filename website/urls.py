@@ -12,4 +12,5 @@ urlpatterns = [
     path('dash/', views.dash, name="dash"),
     path('disruption/', views.disruption, name="disruption"),
     path('data_analysis/', views.data_analysis, name="analysis"),
+    path('team/', views.team, name="team"),
 ]

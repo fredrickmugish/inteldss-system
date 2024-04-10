@@ -4,6 +4,8 @@ from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import Disruptor
+from .models import Team
 # Create your views here.
 
 def home(request):
@@ -62,7 +64,14 @@ def dash(request):
     return render(request, 'dashboard.html')
 
 def disruption(request):
-    return render(request, 'disruption.html')
+    disruptor = Disruptor.objects.all()
+    context = {'disruptors': disruptor}
+    return render(request, 'disruption.html', context)
 
 def data_analysis(request):
     return render(request, 'data_analysis.html')
+
+def team(request):
+    member = Team.objects.all()
+    context = {'members':member}
+    return render(request, 'team.html', context)
