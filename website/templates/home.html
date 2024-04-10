@@ -1,9 +1,53 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
-
 <section class="container text-center">
-  <h3>INTELDSS</h3>
+  <div class="explanation-section">
+    <h1 style="margin-top: 1px;">INTELLIGENT DECISION SUPPORT SYSTEM</h1>
+    <p>Welcome to our Intelligent Decision Support System (IDSS)! Our system is designed to assist users in making well-informed decisions by providing intelligent insights and analysis.</p>
+    <p>With our IDSS, users can access a wide range of data analysis tools, predictive models, and visualization techniques to explore and analyze complex datasets.</p>
+  </div>
 
+<!---
+  <div class="moving-images">
+    <img src="{% static 'images/d1.jpeg' %}" alt="Moving Image 1">
+    <img src="{% static 'images/d2.jpeg' %}" alt="Moving Image 2">
+  </div>
+  ---->
+  
 </section>
+
+<style>
+  .explanation-section {
+    margin-bottom: 50px; /* Adjust spacing as needed */
+  }
+
+  .explanation-section h2 {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .explanation-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .moving-images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .moving-images img {
+    width: 200px; /* Adjust image size as needed */
+    animation: moveImage 10s linear infinite; /* Adjust animation duration as needed */
+  }
+
+  @keyframes moveImage {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
 {% endblock content %}
