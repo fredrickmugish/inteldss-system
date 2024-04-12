@@ -21,23 +21,51 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
       integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 
+    <style>
+      .logout-profile {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #f5b74f; 
+        transition: background-color 0.3s ease;
+      }
+
+      .logout-profile .material-icons {
+        margin-right: 5px;
+      }
+
+      .orange-background {
+        background-color: #f5b74f;
+      }
+      
+      .white-text {
+        color: white;
+      }
+      
+      .list-group-item:hover {
+       background-color: initial;
+     }
+
+    </style>
   </head>
   <body>
     <div class="grid-container">
 
       <!-- Header -->
-      <header class="header">    
-        <div class="header-left" >
-          <span class="material-icons-outlined" style="color: white;">menu</span>
-        </div>
-
+      <header class="header"> 
         <div class="main-title">
-            <p class="font-weight-bold" style="color: white;">intelligent decision support system</p>
+            <p class="font-weight-bold" style="color: white; margin-left: 250px;">Intelligent decision support system</p>
           </div>
         
         <div class="header-right" >
-            <span  >Hello, {{request.user}}</span>
-          <span class="material-icons-outlined"><a href="{% url 'logout' %}">account_circle</a></span>
+          <!-- Enhanced logout profile link -->
+          <a href="{% url 'logout' %}" class="logout-profile">
+            <span class="material-icons-outlined">exit_to_app</span>
+            Logout
+          </a>
         </div>
       </header>
       <!-- End Header -->
@@ -51,93 +79,45 @@
           <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
 
+        
         <ul class="sidebar-list">
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/dash">dashboard</a> Dashboard
-          </li>
-
-
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/disruption">fact_check</a> Disruption
-          </li>
-
-
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
-            </a>
-          </li>
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background" href="/dash">
+            <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Dashboard</span>
+          </a> 
      
-          <li class="sidebar-list-item font-weight-bold">
-            <a class="material-icons-outlined" href="/data_analysis">poll</a> Data Analysis
-          </li>
+        
 
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background" href="/disruption">
+            <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Disruption</span>
+          </a> 
+     
 
-          <li class="sidebar-list-item">
-            <span class="material-icons-outlined">settings</span> Settings
-          </li>
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background" href="/data_coll">
+            <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Data Collection</span>
+          </a> 
+     
           
+            <a class="list-group-item list-group-item-action py-2 ripple orange-background" href="/data_analysis">
+              <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+              <span class="white-text font-weight-bold">Data Analysis</span>
+            </a> 
+
         </ul>
       </aside>
       <!-- End Sidebar -->
 
      
       <main class="main-container">
-         <!-- Main 
-        <div class="main-title">
-          <p class="font-weight-bold">MY <span style="color: dodgerblue;">DASHBOARD</span></p>
-        </div>
-
-        <div class="main-cards">
-
-          <div class="card">
-            <a href="/data_coll">
-            <div class="card-inner">
-              <p class="text-primary">PRODUCTS</p>
-              <span class="material-icons-outlined text-blue">inventory_2</span>
-            </div>
-            <span class="text-primary font-weight-bold">249</span>
-        </a>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">PURCHASE ORDERS</p>
-              <span class="material-icons-outlined text-orange">add_shopping_cart</span>
-            </div>
-            <span class="text-primary font-weight-bold">83</span>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">SALES ORDERS</p>
-              <span class="material-icons-outlined text-green">shopping_cart</span>
-            </div>
-            <span class="text-primary font-weight-bold">79</span>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">INVENTORY ALERTS</p>
-              <span class="material-icons-outlined text-red">notification_important</span>
-            </div>
-            <span class="text-primary font-weight-bold">56</span>
-          </div>
-
-        </div> End Main -->
-
-    {% block content %}
-    {% endblock content %}
+        {% block content %}
+        {% endblock content %}
       </main>
-      
-
-
-
     </div>
 
     <!-- Scripts -->
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
-    <!-- Custom JS -->
-    <script src="{% static 'js/panel.js' %}"></script>
   </body>
 </html>

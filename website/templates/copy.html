@@ -218,3 +218,22 @@
 </div>
 </div>
 {% endblock content %}
+<div>
+  <span  >Hello, {{request.user}}</span>
+  <span class="material-icons-outlined"><a href="{% url 'logout' %}">account_circle</a></span>
+</div>
+<li class="sidebar-list-item font-weight-bold">
+  <a class="material-icons-outlined" href="/dash">dashboard</a> Dashboard
+</li>
+
+
+
+<li class="sidebar-list-item font-weight-bold">
+  <a class="material-icons-outlined" href="/disruption">fact_check</a> Disruption
+</li>
+
+
+<li class="sidebar-list-item font-weight-bold">
+  <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
+  </a>
+</li>

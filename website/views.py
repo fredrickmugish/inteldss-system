@@ -75,3 +75,4 @@ def team(request):
     member = Team.objects.all()
     context = {'members':member}
     return render(request, 'team.html', context)
+
