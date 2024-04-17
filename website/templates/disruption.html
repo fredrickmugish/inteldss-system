@@ -1,30 +1,105 @@
-{% extends 'userpanel.html' %}
+{% extends 'userpanel.html' %} 
 {% load static %} 
 {% block content %}
 
 <div class="main-title">
-    <p class="font-weight-bold">AFFECTED ASPECTS</p>
+  <p class="font-weight-bold">AFFECTED ASPECTS</p>
 </div>
 
 <div style="margin-left: 20px;">
   <div class="disruption-form">
     <form action="" method="post">
-        
+      
       <div class="row">
-        {% for disruptor in disruptors %}
-          <div class="col-md-4">
-            <div class="form-group">
-              <input type="checkbox" id="variable{{ forloop.counter }}" name="variable{{ forloop.counter }}" class="form-check-input">
-              <label class="form-check-label">{{ disruptor.affected_aspect }}</label>
-            </div>
+        
+        <div class="col-md-5">
+          <div class="form-group">
+            <label  class="form-check-label btn btn-primary">Infrastructure and Resources</label>
+            <br>
+            <input type="checkbox">
+            <label class="form-check-label">Learning Environment</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Access to Resources</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Facilities Safety</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Technology Infrastructures</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Physical Health and Safety</label><br>
           </div>
-          </br>
-        {% endfor %}
-      </div>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="form-group">
+            <label  class="form-check-label btn btn-primary">Educational Development</label>
+            <br>
+            <input type="checkbox">
+            <label class="form-check-label">Educational Programs and Curriculum</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Quality Assurance</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Research and Experiments</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Employee Development and Training</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Students Enrollment</label><br>
+          </div>
+        </div>
 
-      <button type="submit" class="btn btn-primary">Ask Here</button>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label  class="form-check-label btn btn-primary">Financial Management</label>
+            <br>
+            <input type="checkbox">
+            <label class="form-check-label">Budget Allocation</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Running Cost</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Debt</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Tuition and Fee Setting</label><br>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="form-group">
+            <label class="form-check-label btn btn-primary">Compliance and Governance</label>
+            <br>
+            <input type="checkbox">
+            <label class="form-check-label">Legal and Regulatory Compliance</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Governance Structure</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Mission, Vision, and Values</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Cyber Crime</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Workforce Planning and Analysis</label><br>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="form-group">
+            <label class="form-check-label btn btn-primary">Community Engagement and Support</label>
+            <br>
+            <input type="checkbox">
+            <label class="form-check-label">Social Connections and Community Engagement</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Students Accommodation</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Recruitment</label><br>
+            <input type="checkbox">
+            <label class="form-check-label">Administrative Functions</label><br>
+             <input type="checkbox">
+            <label class="form-check-label">Mental Health and Emotional Well-being</label><br>
+          </div>
+        </div>
+
+      </div>
     </form>
   </div>
 </div>
+
+
 
 {% endblock content %}

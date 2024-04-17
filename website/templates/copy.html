@@ -1,239 +1,30 @@
-{% extends 'userpanel.html' %} 
+{% extends 'userpanel.html' %}
 {% load static %} 
 {% block content %}
 
 <div class="main-title">
     <p class="font-weight-bold">AFFECTED ASPECTS</p>
-  </div>
+</div>
 
-  <div style="margin-left: 20px;">
+<div style="margin-left: 20px;">
   <div class="disruption-form">
     <form action="" method="post">
         
       <div class="row">
-        <div class="col-md-4">
-        <div class="form-group">
-          <input type="checkbox" id="variable1" name="variable1" class="form-check-input">
-          <label  class="form-check-label">Mental Health and Emotional well being</label>
-      </div>
-    </div>
-    </br>
-     
-    <div class="col-md-4">
-      <div class="form-group">
-          <input type="checkbox" id="variable2" name="variable2" class="form-check-input">
-          <label  class="form-check-label">Facilities safety</label>
-      </div>
-    </div>
-    </br>
-
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="checkbox" id="variable3" name="variable3" class="form-check-input">
-        <label  class="form-check-label">Educational programs and curriculum</label>
-    </div>
-  </div>
-  </br>
-   
-  <div class="col-md-4">
-    <div class="form-group">
-        <input type="checkbox" id="variable4" name="variable4" class="form-check-input">
-        <label  class="form-check-label">Quality Assurance</label>
-    </div>
-  </div>
-  </br>
-
-  <div class="col-md-4">
-  <div class="form-group">
-    <input type="checkbox" id="variable5" name="variable5" class="form-check-input">
-    <label  class="form-check-label">Research and Experiments</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable6" name="variable6" class="form-check-input">
-  <label class="form-check-label">Administrative functions</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable7" name="variable7" class="form-check-input">
-  <label class="form-check-label">Students Accomodation</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable8" name="variable8" class="form-check-input">
-  <label class="form-check-label">Quality Assurance</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable9" name="variable9" class="form-check-input">
-  <label class="form-check-label">Physical Health and safety</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable10" name="variable10" class="form-check-input">
-  <label class="form-check-label">Recruitment</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable11" name="variable11" class="form-check-input">
-  <label class="form-check-label">Running cost</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable12" name="variable12" class="form-check-input">
-  <label  class="form-check-label">Governance structure</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable13" name="variable13" class="form-check-input">
-  <label class="form-check-label">Students Enrollment</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable14" name="variable14" class="form-check-input">
-  <label class="form-check-label">Cyber crime</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable15" name="variable15" class="form-check-input">
-  <label  class="form-check-label">Learning environment</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable16" name="variable16" class="form-check-input">
-  <label class="form-check-label">Workforce planning and analysis</label>
-</div>
-</div>
-</br>
-
-<div class="col-md-4">
-<div class="form-group">
-  <input type="checkbox" id="variable17" name="variable17" class="form-check-input">
-  <label class="form-check-label">Employee development and Training</label>
-</div>
-</div>
-</br>
-
-
-<div class="col-md-4">
-  <div class="form-group">
-    <input type="checkbox" id="variable18" name="variable18" class="form-check-input">
-    <label class="form-check-label">Debt</label>
-  </div>
-  </div>
-  </br>
-
-  <div class="col-md-4">
-    <div class="form-group">
-      <input type="checkbox" id="variable19" name="variable19" class="form-check-input">
-      <label class="form-check-label">Tuition and fee setting</label>
-    </div>
-    </div>
-    </br>
-
-    <div class="col-md-4">
-      <div class="form-group">
-        <input type="checkbox" id="variable20" name="variable20" class="form-check-input">
-        <label class="form-check-label">Legal and Regulatory compliance</label>
-      </div>
-      </div>
-      </br>
-      
-      <div class="col-md-4">
-        <div class="form-group">
-          <input type="checkbox" id="variable21" name="variable21" class="form-check-input">
-          <label class="form-check-label">Mission, Vision, and Values</label>
-        </div>
-        </div>
-        </br>
-
-      <div class="col-md-4">
-        <div class="form-group">
-          <input type="checkbox" id="variable22" name="variable22" class="form-check-input">
-          <label class="form-check-label">Budget allocation</label>
-        </div>
-        </div>
-        </br>
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <input type="checkbox" id="variable23" name="variable23" class="form-check-input">
-            <label class="form-check-label">Access to resources</label>
-          </div>
-          </div>
-          </br>
-
+        {% for disruptor in disruptors %}
           <div class="col-md-4">
             <div class="form-group">
-              <input type="checkbox" id="variable24" name="variable24" class="form-check-input">
-              <label class="form-check-label">Technology infrastructures</label>
+              <input type="checkbox" id="variable{{ forloop.counter }}" name="variable{{ forloop.counter }}" class="form-check-input">
+              <label class="form-check-label">{{ disruptor.affected_aspect }}</label>
             </div>
-            </div>
-            </br>
+          </div>
+          </br>
+        {% endfor %}
+      </div>
 
-            <div class="col-md-4">
-              <div class="form-group">
-                <input type="checkbox" id="variable25" name="variable25" class="form-check-input">
-                <label class="form-check-label">Social connections and community engagement</label>
-              </div>
-              </div>
-              </br>
-</div>
-</br>
-        <button type="submit" class="btn btn-primary">Ask Here</button>
+      <button type="submit" class="btn btn-primary">Ask Here</button>
     </form>
+  </div>
 </div>
-</div>
+
 {% endblock content %}
-<div>
-  <span  >Hello, {{request.user}}</span>
-  <span class="material-icons-outlined"><a href="{% url 'logout' %}">account_circle</a></span>
-</div>
-<li class="sidebar-list-item font-weight-bold">
-  <a class="material-icons-outlined" href="/dash">dashboard</a> Dashboard
-</li>
-
-
-
-<li class="sidebar-list-item font-weight-bold">
-  <a class="material-icons-outlined" href="/disruption">fact_check</a> Disruption
-</li>
-
-
-<li class="sidebar-list-item font-weight-bold">
-  <a class="material-icons-outlined" href="/data_coll">inventory_2</a> Data Collection
-  </a>
-</li>
