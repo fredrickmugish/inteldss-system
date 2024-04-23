@@ -1,53 +1,113 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<section class="container text-center">
-  <div class="explanation-section">
-    <h1 style="margin-top: 1px;">INTELLIGENT DECISION SUPPORT SYSTEM</h1>
-    <p>Welcome to our Intelligent Decision Support System (IDSS)! Our system is designed to assist users in making well-informed decisions by providing intelligent insights and analysis.</p>
-    <p>With our IDSS, users can access a wide range of data analysis tools, predictive models, and visualization techniques to explore and analyze complex datasets.</p>
-  </div>
-
-<!---
-  <div class="moving-images">
-    <img src="{% static 'images/d1.jpeg' %}" alt="Moving Image 1">
-    <img src="{% static 'images/d2.jpeg' %}" alt="Moving Image 2">
-  </div>
-  ---->
-  
-</section>
-
 <style>
-  .explanation-section {
-    margin-bottom: 50px; /* Adjust spacing as needed */
-  }
-
-  .explanation-section h2 {
-    font-size: 24px;
-    color: #333;
-  }
-
-  .explanation-section p {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-  }
-
-  .moving-images {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
     overflow: hidden;
   }
-
-  .moving-images img {
-    width: 200px; /* Adjust image size as needed */
-    animation: moveImage 10s linear infinite; /* Adjust animation duration as needed */
+  .background-image::before {
+    content: "";
+    background-image: url("{% static 'images/an.jpeg' %}");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(2px); 
+    z-index: -1;
   }
-
-  @keyframes moveImage {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+  .black-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+  .explanation-section {
+    position: relative; 
+    z-index: 1; 
+    padding: 20px; 
+  }
+  .explanation-section h1 {
+    color: white; 
+    font-weight: bold; 
+    margin-top: 1px; 
+    font-size: 3rem; 
+  }
+  .explanation-section p {
+    color: white; 
+    font-size: 1.5rem; 
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    background-color: #17A2B8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .about-heading {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
 </style>
+
+<div class="background-image">
+  <div class="black-overlay"></div>
+</div>
+
+<section class="container text-center explanation-section">
+  <h1 style="margin-top: 1px;">INTELLIGENT DECISION SUPPORT SYSTEM</h1>
+  <p>Welcome to the Intelligent Decision Support System (IDSS)! the system is designed to assist users in making well-informed decisions by providing intelligent insights and analysis.</p>
+</section>
+
+<div class="container text-center">
+  <h2 class="about-heading">About the System</h2>
+</div>
+
+<div class="container card-container">
+  <div class="card">
+    <h2>Disruptors</h2>
+    <p>The system has a range of pandemic disruptors data categotized according to the affected aspects that helps
+       in decision making</p>
+  </div>
+  <div class="card">
+    <h2>Predictive Models</h2>
+    <p>Utilize AI/ML to forecast future trends and outcomes based on historical data of pandemic disruptors</p>
+  </div>
+  <div class="card">
+    <h2>Data analysis</h2>
+    <p>Enhance the capability of decision making in high learning institutions during pandemic disruptors</p>
+  </div>
+</div>
+
 {% endblock content %}
