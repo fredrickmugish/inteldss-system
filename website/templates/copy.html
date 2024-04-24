@@ -1,33 +1,9 @@
-{% extends 'userpanel.html' %}
-{% load static %} 
+<!-- userpanel.html -->
+{% extends 'base.html' %}
 {% block content %}
-
-<div class="main-title">
-    <p class="font-weight-bold">AFFECTED ASPECTS</p>
-</div>
-
-<div style="margin-left: 20px;">
-  <div class="disruption-form">
-    <form action="" method="post">
-        
-      <div class="row">
-        {% for disruptor in disruptors %}
-          <div class="col-md-4">
-            <div class="form-group">
-              <input type="checkbox" id="variable{{ forloop.counter }}" name="variable{{ forloop.counter }}" class="form-check-input">
-              <label class="form-check-label">{{ disruptor.affected_aspect }}</label>
-            </div>
-          </div>
-          </br>
-        {% endfor %}
-      </div>
-
-      <button type="submit" class="btn btn-primary">Ask Here</button>
-    </form>
-  </div>
-</div>
-
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
 {% endblock content %}
-
-
-

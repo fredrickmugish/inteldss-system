@@ -76,3 +76,4 @@ def team(request):
     context = {'members':member}
     return render(request, 'team.html', context)
 
+
