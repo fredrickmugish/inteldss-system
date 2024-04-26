@@ -13,4 +13,9 @@ urlpatterns = [
     path('disruption/', views.disruption, name="disruption"),
     path('data_analysis/', views.data_analysis, name="analysis"),
     path('team/', views.team, name="team"),
+    path('data_coll/infrastructure/', views.infrastructure, name="infrastructure"),
+    path('data_coll/education/', views.education, name="education"),
+    path('data_coll/finance/', views.finance, name="finance"),
+    path('data_coll/compliance/', views.compliance, name="compliance"),
+    path('data_coll/community/', views.community, name="community"),
 ]

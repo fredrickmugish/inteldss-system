@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>inteldss</title>
+    <title>Inteldss</title>
 
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -61,15 +61,30 @@
       background-color: transparent; 
     }
     
+    .card {
+      width: 300px; 
+      height: 300px;
+    }
+
+    /* Responsive Sidebar */
+    @media (max-width: 768px) {
+      .sidebar-responsive {
+        transform: translateX(-100%);
+      }
+    }
+  
     </style>
   </head>
   <body>
     <div class="grid-container">
 
       <!-- Header -->
-      <header class="header"> 
+      <header class="header">
+        <div class="header-left" onclick="toggleSidebar()" style="color: white;">
+          <span class="material-icons-outlined">menu</span>
+        </div>  
         <div class="main-title">
-            <p class="font-weight-bold" style="color: white; margin-left: 250px;">Intelligent decision support system</p>
+            <p class="font-weight-bold" style="color: white; margin-left: 100px;">Intelligent decision support system</p>
           </div>
         
         <div class="header-right" >
@@ -83,40 +98,33 @@
       <!-- End Header -->
 
       <!-- Sidebar -->
-<aside id="sidebar">
-  <div class="sidebar-title">
-    <div class="sidebar-brand">
-      <span class="material-icons-outlined"></span> INTEL <span style="color: royalblue;">DSS</span>
-    </div>
-    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-  </div>
-
-  
-  <ul class="sidebar-list">
-    <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/dash/' %}active{% endif %}" href="/dash">
-      <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
-      <span class="white-text font-weight-bold">Dashboard</span>
-    </a> 
-
-    <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/disruption/' %}active{% endif %}" href="/disruption">
-      <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
-      <span class="white-text font-weight-bold">Disruption</span>
-    </a> 
-
-    <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/data_coll/' %}active{% endif %}" href="/data_coll">
-      <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
-      <span class="white-text font-weight-bold">Data Collection</span>
-    </a> 
-
-    <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/data_analysis/' %}active{% endif %}" href="/data_analysis">
-      <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
-      <span class="white-text font-weight-bold">Data Pre-analysis</span>
-    </a> 
-  </ul>
-</aside>
-<!-- End Sidebar -->
-
-
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined"></span> INTEL <span style="color: royalblue;">DSS</span>
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/dash/' %}active{% endif %}" href="/dash">
+            <i class="fas fa-tachometer-alt fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Dashboard</span>
+          </a> 
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/disruption/' %}active{% endif %}" href="/disruption">
+            <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Disruption</span>
+          </a> 
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/data_coll/' %}active{% endif %}" href="/data_coll">
+            <i class="fas fa-chart-line fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Data Repository</span>
+          </a> 
+          <a class="list-group-item list-group-item-action py-2 ripple orange-background {% if request.path == '/' %}active{% endif %}" href="/">
+            <i class="fas fa-globe fa-fw me-3 white-text"></i>
+            <span class="white-text font-weight-bold">Back to Site</span>
+          </a> 
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
      
       <main class="main-container">
         {% block content %}
@@ -127,5 +135,24 @@
     <!-- Scripts -->
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <script>
+      var sidebarOpen = false;
+      var sidebar = document.getElementById("sidebar");
+      
+      function openSidebar() {
+        if(!sidebarOpen) {
+          sidebar.classList.add("sidebar-responsive") ;
+          sidebarOpen = true;
+          setTimeout = 2
+        }
+      }
+      
+      function closeSidebar() {
+        if(sidebarOpen) {
+          sidebar.classList.remove("sidebar-responsive");
+          sidebarOpen = false;
+        }
+      }
+    </script>
   </body>
 </html>

@@ -76,4 +76,17 @@ def team(request):
     context = {'members':member}
     return render(request, 'team.html', context)
 
+def infrastructure(request):
+    return render(request, 'infrastructure.html')
+def education(request):
+    return render(request, 'education.html')
+def finance(request):
+    return render(request, 'finance.html')
+def compliance(request):
+    return render(request, 'compliance.html')
+def community(request):
+    return render(request, 'community.html')
+
+
+
 

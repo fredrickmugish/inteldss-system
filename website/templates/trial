@@ -28,7 +28,66 @@
     </div>
 </div>
 
+<div class="row">
+        
+  <div class="col-md-4">
+    <div class="form-group">
+      <label  class="form-check-label btn btn-primary">Infrastructure and Resources</label>
+      <br>
+      <label class="form-check-label">Learning Environment</label>
+      <label class="form-check-label">Access to Resources</label>
+      <label class="form-check-label">Facilities Safety</label>
+      <label class="form-check-label">Technology Infrastructures</label>
+      <label class="form-check-label">Physical Health and Safety</label>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="form-group">
+      <label  class="form-check-label btn btn-primary">Educational Development</label>
+      <br>
+      <label class="form-check-label">Educational Programs and Curriculum</label>
+      <label class="form-check-label">Quality Assurance</label>
+      <label class="form-check-label">Research and Experiments</label>
+      <label class="form-check-label">Employee Development and Training</label>
+      <label class="form-check-label">Students Enrollment</label>
+    </div>
+  </div>
 
+  <div class="col-md-4">
+    <div class="form-group">
+      <label  class="form-check-label btn btn-primary">Financial Management</label>
+      <br>
+      <label class="form-check-label">Budget Allocation</label>
+      <label class="form-check-label">Running Cost</label>
+      <label class="form-check-label">Debt</label>
+      <label class="form-check-label">Tuition and Fee Setting</label>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="form-check-label btn btn-primary">Compliance and Governance</label>
+      <br>
+      <label class="form-check-label">Legal and Regulatory Compliance</label>
+      <label class="form-check-label">Governance Structure</label>
+      <label class="form-check-label">Mission, Vision, and Values</label>
+      <label class="form-check-label">Cyber Crime</label>
+      <label class="form-check-label">Workforce Planning and Analysis</label>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="form-check-label btn btn-primary">Community Engagement and Support</label>
+      <br>
+      <label class="form-check-label">Social Connections and Community Engagement</label>
+      <label class="form-check-label">Students Accommodation</label>
+      <label class="form-check-label">Recruitment</label>
+      <label class="form-check-label">Administrative Functions</label>
+      <label class="form-check-label">Mental Health and Emotional Well-being</label>
+    </div>
+  </div>
 
 
 <style>

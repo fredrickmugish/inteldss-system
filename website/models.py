@@ -24,3 +24,28 @@ class Team(models.Model):
     class Meta:
         verbose_name = "Team Members"
         verbose_name_plural = "Team Members"
+
+class Student(models.Model):
+    regNo = models.CharField(max_length=100)
+    fName = models.CharField(max_length=100)
+    sName = models.CharField(max_length=100)
+    lName = models.CharField(max_length=100)
+    academic_level = models.CharField(max_length=100)
+    program = models.CharField(max_length=100)
+    year = models.CharField(max_length=100)
+    class Meta:
+        verbose_name = "Students"
+        verbose_name_plural = "Students"
+
+class Employees(models.Model):
+    empId = models.CharField(max_length=100)
+    fName = models.CharField(max_length=100)
+    sName = models.CharField(max_length=100)
+    lName = models.CharField(max_length=100)
+    department = models.CharField(max_length=100)
+    orgName = models.CharField(max_length=100)
+    professional = models.CharField(max_length=100)
+    class Meta:
+        verbose_name = "Employees"
+        verbose_name_plural = "Employees"
+
