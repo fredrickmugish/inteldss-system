@@ -1,0 +1,137 @@
+{% extends 'userpanel.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            align-self: center;
+            width: 150px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="container">
+        <h2>Employee Development and Training</h2>
+        <form action="{% url 'submit' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_heading" value="Employee development and Training">
+            <label for="question1">1. Has the problem reduced opportunities for employee training programs?</label>
+            <select id="question1" name="question1">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+            </select>
+    
+            <label for="question2">2. Are there fewer resources available for employee development?</label>
+            <select id="question2" name="question2">
+                <option value="not_at_all">Not at all</option>
+                <option value="a_few_resources">A few resources</option>
+                <option value="several_resources">Several resources</option>
+                <option value="most_resources">Most resources</option>
+            </select>
+    
+            <label for="question3">3. Has the problem affected the quality of training programs?</label>
+            <select id="question3" name="question3">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+            </select>
+    
+            <label for="question4">4. Is employee participation in training programs affected?</label>
+            <select id="question4" name="question4">
+                <option value="not_at_all">Not at all</option>
+                <option value="a_few_times">A few times</option>
+                <option value="several_times">Several times</option>
+                <option value="many_times">Many times</option>
+            </select>
+    
+            <label for="question5">5. Has the problem led to decreased employee motivation for development?</label>
+            <select id="question5" name="question5">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+            </select>
+    
+            <label for="question6">6. Are there challenges in delivering training remotely due to the problem?</label>
+            <select id="question6" name="question6">
+                <option value="not_at_all">Not at all</option>
+                <option value="a_few_times">A few times</option>
+                <option value="several_times">Several times</option>
+                <option value="many_times">Many times</option>
+            </select>
+    
+            <label for="question7">7. Has the problem caused a reduction in the number of training programs offered?</label>
+            <select id="question7" name="question7">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+            </select>
+    
+    
+            <label for="question8">8. Has the problem impacted the availability of external trainers or training programs?</label>
+            <select id="question8" name="question8">
+                <option value="not_at_all">Not at all</option>
+                <option value="a_few_times">A few times</option>
+                <option value="several_times">Several times</option>
+                <option value="many_times">Many times</option>
+            </select>
+    
+    
+            <input type="submit" value="Submit" style="background-color:#17a2b8">
+        </form>
+    </div>
+    
+{% endblock content %}

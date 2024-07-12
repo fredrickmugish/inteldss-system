@@ -49,3 +49,58 @@ class Employees(models.Model):
         verbose_name = "Employees"
         verbose_name_plural = "Employees"
 
+class Academic(models.Model):
+    college = models.CharField(max_length=100)
+    programs = models.CharField(max_length=100, null=True)
+    enrollment_rate = models.IntegerField(null=True)
+    
+    class Meta:
+        verbose_name = "Academic"
+        verbose_name_plural = "Academic"
+    
+    def __str__(self):
+        return self.college
+    
+class Facilities(models.Model):
+    college = models.ForeignKey(Academic, on_delete=models.CASCADE, null=True)
+    classrooms = models.CharField(max_length=100, null=True)
+    library = models.CharField(max_length=100, null=True)
+    laboratory = models.CharField(max_length=100, null=True)
+    accomodation = models.CharField(max_length=100, null=True)
+    playgrounds = models.CharField(max_length=100, null=True)
+    online_resources = models.CharField(max_length=100, null=True)
+    health_facilities = models.CharField(max_length=100, null=True)
+    
+    class Meta:
+        verbose_name = "Facilities"
+        verbose_name_plural = "Facilities"
+    
+class Finance(models.Model):
+    college = models.ForeignKey(Academic, on_delete=models.CASCADE, related_name='college_finances', null=True)
+    program = models.CharField(max_length=100)
+    tuition_fee = models.CharField(max_length=100)
+  
+  
+    class Meta:
+        verbose_name = "Finance"
+        verbose_name_plural = "Finance"
+
+class Administrative(models.Model):
+    policy = models.CharField(max_length=100)
+    class Meta:
+        verbose_name = "Administrative"
+        verbose_name_plural = "Administrative"
+
+class Social(models.Model):
+    sport = models.CharField(max_length=100)
+    class Meta:
+        verbose_name = "Social"
+        verbose_name_plural = "Social"
+
+class Document(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    file = models.FileField(upload_to='documents/', max_length=255)
+
+    def __str__(self):
+        return self.title

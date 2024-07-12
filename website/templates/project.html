@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+
+<div class="flex-container">
+    <div class="content-item">
+      <br><br>
+        <h1>THE PROJECT</h1>
+        <h2>PROMOTING INCLUSIVE AND SIGNIFICANT REMOTE TEACHING AND LEARNING IN THE EAST AFRICAN HIGHER EDUCATION</h2>
+    </div>
+    <div class="blog-container">
+        <div class="blog-post">
+            <h3>Objective 1</h3>
+            <p>To establish the situation of the existing policies and regulations that support preparedness for remote teaching and learning in higher education in response to pandemics.</p>
+        </div>
+        <div class="blog-post">
+            <h3>Objective 2</h3>
+            <p>To appraise the emerging policy and regulatory best practices for supporting remote teaching and learning during pandemics..</p>
+        </div>
+        <div class="blog-post">
+            <h3>Objective 3</h3>
+            <p>To diagnose the gaps in existing policy and regulatory mechanisms by benchmarking with the best practices appraised in (ii).</p>
+        </div>
+        <div class="blog-post">
+          <h3>Objective 4</h3>
+          <p>To develop a multi-level decision support framework for remote teaching and learning during pandemic.</p>
+      </div>
+      <div class="blog-post">
+        <h3>Objective 5</h3>
+        <p>To develop a decision support system prototype for remote teaching and learning during pandemic.</p>
+    </div>
+    </div>
+</div>
+<style>
+  .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+  }
+  
+  .content-item {
+      margin: 20px 0;
+      text-align: center;
+  }
+  
+  .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 20px;
+      width: 100%; 
+      max-width: 1200px; 
+  }
+  
+  .blog-post {
+      border: 1px solid #ccc;
+      padding: 30px; 
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+      border-radius: 10px; 
+      min-height: 200px; 
+  }
+
+  .blog-post:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .blog-post h3 {
+      font-size: 1.5em; 
+      color: #333;
+      margin-bottom: 15px; 
+  }
+
+  .blog-post p {
+      font-size: 1.1em; 
+      color: #666;
+      line-height: 1.6; 
+  }
+
+  body {
+      background-color: #f2f2f2;
+  }
+
+  footer {
+      background-color: #333;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+  }
+
+  footer h3 {
+      margin-bottom: 15px;
+  }
+
+  footer p, footer ul, footer li {
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+
+  footer a {
+      color: #ffffff;
+      text-decoration: none;
+  }
+
+  footer a:hover {
+      text-decoration: underline;
+  }
+
+  footer hr {
+      background-color: white;
+      border: none;
+      height: 1px;
+  }
+</style>
+
+<br><br><br><br>
+<!-- Footer -->
+<footer class="footer" style="background-color: #333;">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4" style="color: #ffffff;">
+        <br>
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> info@inteldss.org</p>
+        <p><i class="fas fa-phone"></i> +254 725 508353</p>
+        <p><i class="fas fa-map-marker-alt"></i> University of Dodoma | Africa Nazarene University</p>
+      </div>
+      <div class="col-md-4" style="color: #ffffff;">
+        <br>
+        <h3>Quick Links</h3>
+        <ul class="list-unstyled">
+          <li><a href="/" style="color: white;">Home</a></li>
+          <li><a href="/project" style="color: white;">Project</a></li>
+          <li><a href="/team" style="color: white;">InteldssTeam</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4" style="color: #ffffff;">
+        <br>
+        <h3>Follow Us</h3>
+        <ul class="list-unstyled">
+          <li><a  style="color: white;">Facebook</a></li>
+          <li><a  style="color: white;">Twitter</a></li>
+          <li><a  style="color: white;">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr style="background-color: white;">
+    <p style="color: white;">&copy; 2024, By Inteldss. All rights reserved.</p>
+    <br>
+  </div>
+</footer>
+{% endblock content %}

@@ -1,6 +1,212 @@
 {% extends 'userpanel.html' %} 
 {% load static %} 
 {% block content %}
-<h1>COMPLIANCE</h1>
+<h1>ADMINISTRATIVE</h1>
 
+
+<div class="slider-container">
+    <div class="slider-wrapper">
+      <div class="card">
+          <div class = "imgBx">
+              <img src ="{%static 'images/c1.jpeg'%}" alt = "hakuna image">
+            </div>
+        <div class="content">
+          <h4>LEGAL AND REGULATORY COMPLIANCE</h4>
+          <p class="explanation">
+            Ensuring adherence to laws and regulations influences decisions on
+             policies, procedures, and operational practices. Compliance efforts mitigate
+              legal risks, maintain institutional
+             reputation, and foster a culture of accountability.
+          </p>
+        </div>
+      </div>
+  
+      
+      <div class="card">
+          <div class = "imgBx">
+              <img src ="{%static 'images/c2.jpeg'%}" alt = "hakuna image">
+            </div>
+        <div class="content">
+          <h4>GOVERNANCE STRUCTURE</h4>
+          <p class="explanation">
+            Decision-making frameworks, such as board structures and administrative
+             hierarchies, shape how authority is distributed and exercised within the university. Governance decisions impact transparency,
+            accountability, and strategic direction
+          </p>
+        </div>
+      </div>
+  
+      <div class="card">
+          <div class = "imgBx">
+              <img src ="{%static 'images/c3.jpeg'%}" alt = "hakuna image">
+            </div>
+        <div class="content">
+          <h4>MISSION, VISION AND VALUES</h4>
+          <p class="explanation">
+            Aligning decisions with the institution's mission, vision, and
+             values guides strategic planning and resource allocation. Consistency with these guiding principles fosters institutional identity,
+             stakeholder engagement, and long-term sustainability
+          </p>
+        </div>
+      </div>
+  
+
+      <div class="card">
+        <div class = "imgBx">
+            <img src ="{%static 'images/e4.jpeg'%}" alt = "hakuna image">
+          </div>
+        
+      <div class="content">
+        <h4>EMPLOYEE DEVELOPMENT AND TRAINING</h4>
+        <p class="explanation">
+          Programs influence decisions on staff recruitment, retention, 
+          and professional growth. Investments foster organizational effectiveness, 
+          innovation, and a culture of continuous improvement
+        </p>
+      </div>
+    </div>
+
+      <div class="card">
+          <div class = "imgBx">
+              <img src ="{%static 'images/c4.jpeg'%}" alt = "hakuna image">
+            </div>
+        <div class="content">
+          <h4>CYBER CRIME</h4>
+          <p class="explanation">
+            Managing cybersecurity risks involves decisions on 
+            technology investments, data protection measures, and incident 
+            response protocols. Safeguarding against cyber threats is essential for
+             protecting sensitive information, maintaining
+             operational continuity, and preserving trust.
+          </p>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class = "imgBx">
+            <img src ="{%static 'images/l3.jpeg'%}" alt = "hakuna image">
+          </div>
+      <div class="content">
+        <h4>RECRUITMENT</h4>
+        <p class="explanation">
+          Engaging with prospective students and their families influences 
+          decisions on admissions strategies, marketing efforts, and enrollment goals.
+           Recruitment initiatives aim to attract diverse and qualified candidates,
+            enhancing the university's academic profile and student body.
+        </p>
+      </div>
+    </div>
+
+      <div class="card">
+          <div class = "imgBx">
+              <img src ="{%static 'images/c5.jpeg'%}" alt = "hakuna image">
+            </div>
+        <div class="content">
+          <h4>WORKFORCE PLANNING AND ANALYSIS</h4>
+          <p class="explanation">
+            Decisions regarding staffing levels, skills development,
+             and talent management impact organizational effectiveness and employee
+              satisfaction. Strategic workforce planning ensures alignment with institutional goals,
+             enhances productivity, and supports innovation.
+          </p>
+        </div>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+    <button class="prev-btn" onclick="slide(-1)">&#10094;</button>
+    <button class="next-btn" onclick="slide(1)">&#10095;</button>
+  </div>
+  
+  <style>
+    .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .card {
+        flex: 0 0 300px; /* Adjust card width as needed */
+        margin: 0 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative; /* Required for positioning the explanation */
+    }
+    .explanation {
+      display: none;
+      position: absolute;
+      bottom: -100px; /* Adjust the distance from the card */
+      left: 0;
+      right: 0;
+      background-color: #17a2b8;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      transition: bottom 0.3s ease;
+  }
+
+    
+
+    .card:hover .explanation {
+        display: block;
+        bottom: 0;
+    }
+
+    .prev-btn,
+    .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px; /* Reduced font size */
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+
+    .imgBx {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .imgBx img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .imgBx:hover img {
+        transform: scale(1.1);
+    }
+</style>
+
+  
+  <script>
+    let slideIndex = 0;
+  
+    function slide(n) {
+      const slides = document.querySelectorAll('.card');
+      const wrapper = document.querySelector('.slider-wrapper');
+      const cardWidth = slides[0].offsetWidth;
+      slideIndex += n;
+      slideIndex = Math.max(0, Math.min(slideIndex, slides.length - 1));
+      wrapper.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+    }
+  </script>
 {% endblock content %}

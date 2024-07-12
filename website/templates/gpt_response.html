@@ -1,0 +1,112 @@
+{% extends 'userpanel.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide download button for PDF generation */
+        .download-btn-pdf {
+            display: none;
+        }
+    </style>
+
+    <div class="container" id="recommendations-container">
+        <h2>RECOMMENDATIONS</h2>
+        <br>
+        
+        {% for paragraph in response_text %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+        
+        <button class="download-btn" onclick="downloadRecommendationsAsPDF()">Download Recommendations</button>
+    </div>
+
+    <!-- Include html2canvas and jsPDF libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script>
+        async function downloadRecommendationsAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const recommendationsContainer = document.getElementById('recommendations-container');
+            const downloadBtn = document.querySelector('.download-btn');
+
+            // Temporarily hide the download button for PDF generation
+            downloadBtn.classList.add('download-btn-pdf');
+
+            // Use html2canvas to capture the container as a canvas
+            html2canvas(recommendationsContainer, { scale: 2 }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                // Calculate the dimensions of the image for the PDF
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                // Add the image to the PDF
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                // Save the PDF
+                pdf.save('recommendations.pdf');
+
+                // Show the download button again after PDF generation
+                downloadBtn.classList.remove('download-btn-pdf');
+            });
+        }
+    </script>
+{% endblock content %}

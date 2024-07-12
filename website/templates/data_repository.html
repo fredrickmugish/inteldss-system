@@ -1,0 +1,58 @@
+{% extends 'userpanel.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-3">
+    <h2 class="mb-3">DATA REPOSITORY</h2>
+    <div class="row">
+        {% for document in documents %}
+        <div class="col-md-3 d-flex align-items-stretch">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{ document.title }}</h5>
+                    <p class="card-text">{{ document.description }}</p>
+                    <a href="{{ document.file.url }}" class="btn btn-primary" target="_blank">View PDF</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+
+<style>
+  .card {
+    height: 100%;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+  .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+  .btn {
+    align-self: center;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+</style>

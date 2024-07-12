@@ -1,46 +1,149 @@
-{% extends 'userpanel.html' %} 
+{% extends 'userpanel.html' %}
 {% load static %} 
+
 {% block content %}
+<style>
+  /* Custom styling */
+  .jumbotron {
+    background-color: #f8f9fa; 
+    padding: 4rem 1rem; 
+    border-radius: 15px; 
+    text-align: center; 
+  }
 
+  .jumbotron h1 {
+    color: #007bff; 
+    font-weight: bold; 
+    margin-bottom: 2rem; 
+  }
 
-<!--
-<div class="main-title">
-    <p class="font-weight-bold">DATA <span style="color: dodgerblue;">COLLECTION</span></p>
+  .jumbotron p {
+    color: #6c757d; 
+    font-size: 1.2rem;
+  }
+
+  .feature {
+    padding: 3rem 2rem; 
+    border: 2px solid #007bff; 
+    border-radius: 15px; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+    height: 100%;
+  }
+
+  .feature:hover {
+    border-color: #0056b3; 
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); 
+  }
+
+  .feature h2 {
+    color: #007bff; 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
+  }
+
+  .feature p {
+    color: #6c757d; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+  }
+
+  .btn-custom {
+    background-color: #007bff; 
+    border-color: #007bff; 
+    font-size: 1.1rem; 
+    color: #ffffff;
+    font-weight: bold; 
+    transition: background-color 0.3s, border-color 0.3s; 
+  }
+
+  .btn-custom:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .feature {
+      padding: 2rem; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .jumbotron h1 {
+      font-size: 2.5rem; 
+    }
+    .jumbotron p {
+      font-size: 1rem; 
+    }
+    .feature {
+      padding: 1.5rem; 
+    }
+    .feature h2 {
+      font-size: 1.3rem; 
+    }
+    .feature p {
+      font-size: 1rem; 
+    }
+  }
+
+  @media (max-width: 576px) {
+    .jumbotron h1 {
+      font-size: 2rem; /* Adjust heading font size */
+    }
+    .jumbotron p {
+      font-size: 0.9rem; 
+    }
+    .feature {
+      padding: 1rem; 
+    }
+    .feature h2 {
+      font-size: 1.2rem; 
+    }
+    .feature p {
+      font-size: 0.9rem; 
+    }
+  }
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Intelligent Decision Support System for Universities</h1>
+    <a href="#" class="btn btn-custom" onclick="scrollToContent()">GET STARTED!!</a>
   </div>
+</div>
 
-  <div class="main-cards">
-    <div class="card">
-      <img src="{% static 'images/aff.png' %}">
-      <a href="/data_coll">
-      <div class="card-inner">
-        <p class="text-primary">DISTRUPTIONS</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="feature">
+        <h2>Predictive Analytics</h2>
+        <p>Utilizing historical data and predictive modeling techniques to forecast future trends.</p>
+        <a href="/disruption" class="btn btn-custom">Continue</a>
       </div>
-      <span class="text-primary font-weight-bold">249</span>
-  </a>
     </div>
-
-    <div class="main-cards">
-      <div class="card">
-        <img src="{% static 'images/aff.png' %}">
-        <a href="/data_coll">
-        <div class="card-inner">
-          <p class="text-primary">DATA COLLECTION</p>
-        </div>
-        <span class="text-primary font-weight-bold">249</span>
-    </a>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="feature">
+        <h2>Data Repository</h2>
+        <p>Presenting complex data and analysis results in a visually appealing and easy-to-understand format.</p>
+        <a href="/data_repo" class="btn btn-custom">Continue</a>
       </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="feature">
+        <h2>Decision Automation</h2>
+        <p>Automating routine decision-making processes based on predefined rules and algorithms.</p>
+        <a href="#" class="btn btn-custom">Continue</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <div class="main-cards">
-        <div class="card">
-          <img src="{% static 'images/aff.png' %}">
-          <a href="/data_coll">
-          <div class="card-inner">
-            <p class="text-primary">DATA PRE-ANALYSIS</p>
-          </div>
-          <span class="text-primary font-weight-bold">249</span>
-      </a>
-        </div>
-      -->
-
+<script>
+function scrollToContent() {
+  document.querySelector('.row').scrollIntoView({
+    behavior: 'smooth'
+  });
+}
+</script>
 
 {% endblock content %}

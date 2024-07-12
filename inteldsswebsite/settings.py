@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,7 +57,7 @@ ROOT_URLCONF = "inteldsswebsite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        'DIRS': [ ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -75,11 +76,24 @@ WSGI_APPLICATION = "inteldsswebsite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         #"ENGINE": "django.db.backends.sqlite3",
+#         #"NAME": BASE_DIR / "db.sqlite3",
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'inteldss',    
+#         'USER': 'root',            
+#         'PASSWORD': '',           
+#         'HOST': 'localhost',      
+#         'PORT': '3306',   
+#         'OPTIONS': {
+#               'unix_socket': '/opt/lampp/var/mysql/mysql.sock',  
+#         },
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.parse("postgresql://inteldss_user:VxORTeXaf8QJMj0yccJJlJBR0q70BMs1@dpg-cq80c40gph6c73evbta0-a.oregon-postgres.render.com/inteldss")
 }
 
 
@@ -209,7 +223,7 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
 
     # Hide these models when generating side menu (e.g auth.user)
-    "hide_models": [],
+    "hide_models": ["auth.Group"],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
@@ -298,5 +312,15 @@ JAZZMIN_UI_TWEAKS = {
         "warning": "btn-warning",
         "danger": "btn-danger",
         "success": "btn-success"
-    }
+    }   
 }
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGOUT_REDIRECT_URL = '/login'  
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+print(f"Settings: Retrieved API key: {openai_api_key}")  # Debug print

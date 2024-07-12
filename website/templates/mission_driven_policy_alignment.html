@@ -1,0 +1,144 @@
+{% extends 'userpanel.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            align-self: center;
+            width: 150px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="container">
+        <h2>Mission, Vision, and Values</h2>
+        <form action="{% url 'submit' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_heading" value="Mission, Vision, and Values">
+            
+            <label for="question1">Has the problem led to a misalignment with the organization's mission?</label>
+            <select id="question1" name="question1">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question2">Has the problem caused a deviation from the organization's vision?</label>
+            <select id="question2" name="question2">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question3">Are the core values of the organization being compromised due to the problem?</label>
+            <select id="question3" name="question3">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question4">Has the problem impacted the organization's ability to achieve its strategic goals?</label>
+            <select id="question4" name="question4">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question5">Has the problem affected stakeholder trust in the organization?</label>
+            <select id="question5" name="question5">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question6">Has the problem led to confusion about the organization's direction among employees?</label>
+            <select id="question6" name="question6">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <label for="question7">Has the problem influenced the organization's decision-making processes?</label>
+            <select id="question7" name="question7">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+         
+            <label for="question8">Has the problem resulted in negative public perception of the organization's mission and vision?</label>
+            <select id="question8" name="question8">
+                <option value="not_at_all">Not at all</option>
+                <option value="slightly">Slightly</option>
+                <option value="moderately">Moderately</option>
+                <option value="significantly">Significantly</option>
+                <option value="severely">Severely</option>
+            </select>
+    
+            <input type="submit" value="Submit" style="background-color:#17a2b8">
+        </form>
+    </div>
+    
+{% endblock content %}
