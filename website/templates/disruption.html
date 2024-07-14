@@ -1,7 +1,15 @@
-{% extends 'userpanel.html' %} 
-{% load static %} 
+{% extends 'userpanel.html' %}
+{% load static %}
 {% block content %}
+<div id="streamlit-content"></div>
 
-    <iframe src="https://stremlitmodel1.streamlit.app" width="100%" height="600"></iframe>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Fetch Streamlit app content
+    $.get("https://stremlitmodel1.streamlit.app", function(data) {
+        $("#streamlit-content").html(data);
+    });
+});
+</script>
 {% endblock content %}
