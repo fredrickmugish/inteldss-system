@@ -10,6 +10,7 @@ from .models import Team
 from django.urls import reverse
 from .models import Document
 from .forms import DocumentForm
+import requests
 
 # Create your views here.
 
@@ -74,19 +75,8 @@ def dash(request):
 def disruption(request):
     disruptor = Disruptor.objects.all()
     context = {'disruptors': disruptor}
-
-    # Example: Proxying Streamlit content
     streamlit_url = "https://stremlitmodel1.streamlit.app"  # Replace with your Streamlit URL
-    try:
-        response = requests.get(streamlit_url)
-        if response.status_code == 200:
-            streamlit_content = response.text
-            context['streamlit_content'] = streamlit_content
-        else:
-            context['error_message'] = f"Failed to fetch content from {streamlit_url}. Status code: {response.status_code}"
-    except requests.RequestException as e:
-        context['error_message'] = f"Error fetching content from {streamlit_url}: {str(e)}"
-
+    context['streamlit_url'] = streamlit_url
     return render(request, 'disruption.html', context)
     #return redirect("https://stremlitmodel1.streamlit.app")
 

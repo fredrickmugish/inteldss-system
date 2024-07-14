@@ -31,6 +31,10 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL=True
+
+X_FRAME_OPTIONS = 'ALLOWALL'
+
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -45,16 +49,25 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    "https://stremlitmodel1.streamlit.app",
+]
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = "inteldsswebsite.urls"
 
@@ -77,11 +90,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "inteldsswebsite.wsgi.application"
 
 
-X_FRAME_OPTIONS = 'ALLOWALL'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://stremlitmodel1.streamlit.app",
-]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
