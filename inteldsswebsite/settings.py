@@ -29,9 +29,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
-# Application definition
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+       'http://localhost:8000',
+       'https://stremlitmodel1.streamlit.app',
+       'https://inteldss-system.onrender.com'
+)
 
 X_FRAME_OPTIONS = 'ALLOWALL'
 
@@ -60,13 +63,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    "https://stremlitmodel1.streamlit.app",
-]
+# Application definition
+CORS_ORIGIN_ALLOW_ALL=True
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = "inteldsswebsite.urls"
