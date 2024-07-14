@@ -74,8 +74,10 @@ def dash(request):
 def disruption(request):
     disruptor = Disruptor.objects.all()
     context = {'disruptors': disruptor}
-    return render(request, 'disruption.html', context)
+    #return render(request, 'disruption.html', context)
     #return redirect("https://stremlitmodel1.streamlit.app")
+    streamlit_url = "https://stremlitmodel1.streamlit.app"  # Replace with your Streamlit URL
+    return render(request, 'disruption.html', {'streamlit_url': streamlit_url})
 
 def data_analysis(request):
     return render(request, 'data_analysis.html')
