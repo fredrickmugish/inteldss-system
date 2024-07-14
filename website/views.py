@@ -59,6 +59,7 @@ def login_page(request):
 
 
 @login_required(login_url='login')
+
 def user_panel(request):
      return render(request, 'dashboard.html')
 
