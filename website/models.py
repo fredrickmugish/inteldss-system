@@ -96,11 +96,24 @@ class Social(models.Model):
     class Meta:
         verbose_name = "Social"
         verbose_name_plural = "Social"
-
+        
 class Document(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    file = models.FileField(upload_to='documents/', max_length=255)
+    file = models.FileField(upload_to='documents/', max_length=255, blank=True, null=True)
+    link = models.URLField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    def get_file_url(self):
+        if self.file:
+            return self.file.url
+        return None
+
+    def get_document_url(self):
+        if self.file:
+            return self.file.url
+        if self.link:
+            return self.link
+        return None

@@ -10,7 +10,13 @@
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">{{ document.title }}</h5>
                     <p class="card-text">{{ document.description }}</p>
-                    <a href="{{ document.file.url }}" class="btn btn-primary" target="_blank">View PDF</a>
+                    {% if document.file %}
+                        <a href="{{ document.file.url }}" class="btn btn-primary" target="_blank">View PDF</a>
+                    {% elif document.link %}
+                        <a href="{{ document.link }}" class="btn btn-primary" target="_blank">View Document</a>
+                    {% else %}
+                        <p>No document available</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
