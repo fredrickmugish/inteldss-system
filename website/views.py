@@ -467,7 +467,7 @@ f"Given the {score_interpretation}, evaluate the current state of social connect
     f"Highlight the importance of engaging with student representatives and stakeholders in the decision-making process for tuition and fee adjustments."
     f"Also, ensure your response align with Undergraduate Admission Guidebooks."        
             ],
-            "Administrative Functions":[
+            "Administrative functions":[
 f"Given the {score_interpretation}, evaluate the current administrative functions and propose improvements to enhance efficiency and effectiveness during the disruption. "
     f"Discuss the impact of the disruption on various administrative processes such as student registration, record keeping, and staff management. "
     f"Propose the adoption of digital tools and platforms to streamline administrative tasks and reduce manual workload. "
