@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 {% load static %} 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Inteldss</title>
 
   <!-- Montserrat Font -->
@@ -57,11 +57,11 @@
       background-color: #17a2b8;
       z-index: 1000;
       transition: margin-left 0.3s;
-      padding: 1.5rem 1rem;
-      height: 70px;
+      padding: 1.5rem 1rem; /* Increase padding */
+      height: 70px; /* Set a fixed height for the header */
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: center; /* Center items vertically */
+      justify-content: space-between; /* Distribute space between items */
     }
 
     .list-group-item:hover {
@@ -76,12 +76,12 @@
     .grid-container {
       display: flex;
       flex-direction: column;
-      transition: margin-left 0.3s;
+      transition: margin-left 0.3s; /* Smooth transition for main content */
     }
 
     .main-container {
-      margin-left: 250px;
-      transition: margin-left 0.3s;
+      margin-left: 250px; /* Adjust based on sidebar width */
+      transition: margin-left 0.3s; /* Smooth transition for main content */
     }
 
     .sidebar-hidden .main-container, .sidebar-hidden .header {
@@ -93,13 +93,13 @@
     }
 
     #sidebar {
-      width: 250px;
+      width: 250px; /* Adjust sidebar width */
       position: fixed;
       top: 0;
       left: 0;
       height: 100%;
       overflow-y: auto;
-      transition: transform 0.3s;
+      transition: transform 0.3s; /* Smooth transition for sliding effect */
     }
 
     @media (max-width: 768px) {
@@ -110,10 +110,6 @@
 
       .main-container {
         margin-left: 0;
-      }
-
-      #sidebar {
-        transform: translateX(-100%);
       }
 
       .sidebar-hidden #sidebar {
@@ -130,10 +126,6 @@
 
       .sidebar-title .sidebar-brand {
         text-align: center;
-      }
-
-      .header-left {
-        display: flex;
       }
     }
   </style>
@@ -162,6 +154,7 @@
     <!-- Sidebar -->
     <aside id="sidebar">
       <div class="sidebar-title">
+      
         <div class="sidebar-brand">
           <br><br>
           <a href="/dash" style="text-decoration: none; color: inherit;">
@@ -207,22 +200,24 @@
   <!-- ApexCharts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
   <script>
-    var sidebarOpen = false;
+    var sidebarOpen = true; // Sidebar is visible by default
     var sidebar = document.getElementById("sidebar");
     var gridContainer = document.querySelector('.grid-container');
 
     function toggleSidebar() {
       sidebarOpen = !sidebarOpen;
       if (sidebarOpen) {
-        sidebar.style.transform = 'translateX(0)';
+        gridContainer.classList.remove('sidebar-hidden');
       } else {
-        sidebar.style.transform = 'translateX(-100%)';
+        gridContainer.classList.add('sidebar-hidden');
       }
     }
 
     function closeSidebar() {
-      sidebarOpen = false;
-      sidebar.style.transform = 'translateX(-100%)';
+      if (sidebarOpen) {
+        sidebarOpen = false;
+        gridContainer.classList.add('sidebar-hidden');
+      }
     }
   </script>
 </body>
